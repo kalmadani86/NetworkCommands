@@ -1,0 +1,46 @@
+## Networking Commands Windows and Linux
+
+# Windows
+#gathering system information
+>systeminfo
+#showing the pc ip addrress
+>ipconfig
+3getting the MAC address
+>getmac
+#to list all the ip addresses of the devices connected
+>arp /a
+or
+>arp -a
+#find and review wireless network password
+netsh wlan show profile name="[SSIDNAME]" key=clear
+#view and configure wireles-network adaptors
+>netsh wlan show drivers
+>netsh wlan show profiles #this shows all the WAP SSID the device was connected to
+>netsh wlan show interface
+>netsh wlan show Wirelesscapabilities
+#showing all ports, listining is good, established means someone is connected
+>netstat -ano
+#testing connectivity
+>ping [gateway ip] -t
+or
+>ping nameofISPprovider.srv
+
+Linux (UBUNTU)
+#show the host name
+>hostname 
+#testing connectivity
+>ping [ip address]
+>sudo ping [RouterIPAddress]
+#flooding with ping
+>ping -f [ip Address/URL]  
+#to get information rgarding a domain, need to install the tool with super user permission
+>sudo apt install whois
+#for network trouble shooting with DNS
+>dig a [yourdomain.com]
+#if emails are not going through
+>dig mx yourdomain.com
+#to securely connect to remote servers
+>ssh [your_user@yourdomain.com]
+#check wireless network interface
+>sudo apt install wireless-tools # need to install the tools for wireles configuration
+>iwconfig
